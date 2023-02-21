@@ -10,6 +10,7 @@ import Foundation
 final class ProductViewModel {
     var products: [Product] = []
     var eventHandler: ((_ event : Event) -> Void)? // Data Binding closure
+    var eventHandler1: ((_ event : Event) -> Void)?
     var noInternet: (() -> Void)?
     let internetConnectivity =  InternetAvaiable()
 
