@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import MVVMPractiseDemo
+@testable import MVVMDemo
 
 final class MVVMPractiseDemoTests: XCTestCase {
 
