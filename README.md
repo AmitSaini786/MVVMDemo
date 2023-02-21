@@ -18,3 +18,4 @@ Model View ViewModel (MVVM) Design Pattern.
 - Inheritance - Final Keyword, Init()
 - Memory Management
 - Light and Dark Mode
+- Unit Testing
