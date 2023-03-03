@@ -78,9 +78,9 @@ extension ProductListViewController : UITableViewDataSource{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as? ProductCell else {
             return UITableViewCell()
         }
-        
         let product = viewModel.products[indexPath.row]
         cell.product = product
+        cell.buyButton.tag = indexPath.row
         return cell
     }
     

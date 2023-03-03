@@ -1,13 +1,13 @@
 //
-//  MVVMPractiseDemoUITests.swift
-//  MVVMPractiseDemoUITests
+//  MVVMDemoUITests.swift
+//  MVVMDemoUITests
 //
-//  Created by Amit on 17/02/23.
+//  Created by Amit on 03/03/23.
 //
 
 import XCTest
 
-final class MVVMPractiseDemoUITests: XCTestCase {
+final class MVVMDemoUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,9 +24,16 @@ final class MVVMPractiseDemoUITests: XCTestCase {
 
     func testExample() throws {
         // UI tests must launch the application that they test.
+    
         let app = XCUIApplication()
         app.launch()
-
+        
+        let title = app.staticTexts["Products"]
+        XCTAssertTrue(title.exists , "sdsd")
+        let tablesQuery = XCUIApplication().tables
+        XCTAssertTrue(tablesQuery.element.exists)
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops").staticTexts["Buy"]/*[[".cells.containing(.staticText, identifier:\"$109.95\")",".buttons[\"Buy\"].staticTexts[\"Buy\"]",".staticTexts[\"Buy\"]",".cells.containing(.staticText, identifier:\"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\")",".cells.containing(.staticText, identifier:\"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\")"],[[[-1,4,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+                
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 

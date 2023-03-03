@@ -29,20 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B3E9049299FF102009C3807"
-               BuildableName = "MVVMDemoTests.xctest"
-               BlueprintName = "MVVMDemoTests"
-               ReferencedContainer = "container:MVVMDemo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6B3E9053299FF102009C3807"
+               BlueprintIdentifier = "6BFFB46B29B2518B005F0FB0"
                BuildableName = "MVVMDemoUITests.xctest"
                BlueprintName = "MVVMDemoUITests"
                ReferencedContainer = "container:MVVMDemo.xcodeproj">

@@ -16,7 +16,8 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+    @IBOutlet weak var buyButton: UIButton!
+
     var product: Product? {
         didSet { // Property Observer
             productDetailConfiguration()
@@ -44,7 +45,11 @@ class ProductCell: UITableViewCell {
         priceLabel.text =  "$\(product.price)"
         rateButton.setTitle("\(product.rating.rate)", for: .normal)
         productImageView.setImage(with: product.image)
-
+        buyButton.addTarget(self, action: #selector(buyButtonAction), for: .touchUpInside)
+    }
+    @objc  func buyButtonAction(_ sender:UIButton){
+        print(sender.tag)
+//        guard let sender.tag else {return}
     }
     
 }

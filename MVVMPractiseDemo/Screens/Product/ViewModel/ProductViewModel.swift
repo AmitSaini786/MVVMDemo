@@ -10,7 +10,6 @@ import Foundation
 final class ProductViewModel {
     var products: [Product] = []
     var eventHandler: ((_ event : Event) -> Void)? // Data Binding closure
-    var eventHandler1: ((_ event : Event) -> Void)?
     var noInternet: (() -> Void)?
     let internetConnectivity =  InternetAvaiable()
 
@@ -18,7 +17,7 @@ final class ProductViewModel {
         completion(internetConnectivity.isInternetAvailable())
     }
     func fetchProducts(){
-        eventHandler?(.loading)
+        self.eventHandler?(.loading)
         APIManager.shared.request(
             modelType: [Product].self, type: APIEndPoint.products) { response in
                 switch response {
@@ -27,6 +26,7 @@ final class ProductViewModel {
                     self.eventHandler?(.stopLoading)
                     self.eventHandler?(.dataLoaded)
                 case .failure(let error):
+                    print(error)
                     self.eventHandler?(.stopLoading)
                     self.eventHandler?(.error(error))
                 }

@@ -45,11 +45,9 @@ final class APIManager{
         }
         
         var request = URLRequest(url: url)
+        request.timeoutInterval = 30
         request.httpMethod = type.methods.rawValue
         
-        //here we use if let at place of guard
-        ///becasue guard will retutrn is the request is get type and have not body(paramets)
-        ///so in this case if body is empty then control goes to next line
         if let parameters = type.body{
             request.httpBody = try? JSONEncoder().encode(parameters)
         }
@@ -58,6 +56,8 @@ final class APIManager{
         
         //Background task
         ///URLSession Iis the small s singelton becasue we can use it by using creating the instance or without creating any instance
+        
+
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data, error == nil else{
                 complition(.failure(.invalidData))
