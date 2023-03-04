@@ -33,7 +33,6 @@ final class MVVMDemoUITests: XCTestCase {
         let tablesQuery = XCUIApplication().tables
         XCTAssertTrue(tablesQuery.element.exists)
         tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops").staticTexts["Buy"]/*[[".cells.containing(.staticText, identifier:\"$109.95\")",".buttons[\"Buy\"].staticTexts[\"Buy\"]",".staticTexts[\"Buy\"]",".cells.containing(.staticText, identifier:\"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\")",".cells.containing(.staticText, identifier:\"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\")"],[[[-1,4,1],[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
-                
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
