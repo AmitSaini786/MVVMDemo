@@ -20,3 +20,4 @@ Model View ViewModel (MVVM) Design Pattern.
 - Light and Dark Mode
 - Unit Testing
 - UI Testing
+- Capital 'S' singelton
